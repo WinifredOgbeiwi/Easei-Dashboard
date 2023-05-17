@@ -1,7 +1,7 @@
 import React from 'react'
-import { ShadowBox, Title } from '../../Styles/GlobalStyles'
 import ReactApexChart from 'react-apexcharts';
-import styled from 'styled-components';
+import { Title } from "../../Styles/GlobalStyles";
+import { Container, Chart, Circle, Circle2, CircleTitle, TitleContainer } from '../../Styles/chartCircle';
 function ChartCircle() {
 
   const series = [82, 50];
@@ -9,7 +9,7 @@ function ChartCircle() {
   const options = {
     chart: {
       width: '100%',
-      height: 200,
+      height: 100,
       type: 'radialBar',
     },
     fill: {
@@ -19,33 +19,18 @@ function ChartCircle() {
       radialBar: {
         dataLabels: {
           name: {
-            fontSize: '22px',
+            fontSize: '.2rem',
           },
           value: {
-            fontSize: '1rem',
+            fontSize: '.8rem',
           },
-          responsive: [
-            {
-              breakpoint: 1000,
-              options: {
-                plotOptions: {
-                  bar: {
-                    horizontal: false
-                  }
-                },
-                legend: {
-                  position: "bottom"
-                }
-              }
-            }
-          ],
+          
           total: {
             show: true,
             label: 'Total',
-            fontSize: '2rem',
+            fontSize: '.8rem',
 
             formatter: function (w) {
-              // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
               return 2399;
             },
           },
@@ -62,18 +47,25 @@ function ChartCircle() {
           <Chart>
           <ReactApexChart options={options} series={series} type="radialBar" height={250} /></Chart>
         </div>
+<hr/>
+
+  <>
+  <TitleContainer>
+<CircleTitle>
+  <Circle></Circle> 
+  <p>External Invoice</p>
+  </CircleTitle>
+          <CircleTitle>
+          <Circle2></Circle2> 
+            <p>Internal Invoice</p>
+        </CircleTitle>
+        </TitleContainer>
+        </>
 
       </Container>
     </>
   )
 }
-const Container = styled(ShadowBox)`
-width: 35%;
-  @media (max-width: 765px) {
-  
-  }
-`
-const Chart  = styled.div`
-`
+
 
 export default ChartCircle;

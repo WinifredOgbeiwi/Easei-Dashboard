@@ -21,10 +21,10 @@ function Organisation() {
           </Thead>
          <Tbody>
             {TableData.map((obj, index) => (
-              <TbodyTr>
+              <TbodyTr key={index}>
                 {keys.map((item, index) => {
                   const value = obj[item];
-                  return <Td>{value}</Td>;
+                  return <Td key={index}>{value}</Td>;
                 })}
               </TbodyTr>
             ))}

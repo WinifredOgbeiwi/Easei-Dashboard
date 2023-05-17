@@ -58,7 +58,7 @@ export const OverviewShadowBox = styled(ShadowBox)`
   }
 `;
 
-export const Text = styled.p`
+export const Text = styled.div`
   color: ${(props) => (props.$gray && "#837e7e") || "black"};
   font-size: 0.5rem;
   ${(props) =>

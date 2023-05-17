@@ -1,6 +1,6 @@
 import React from 'react'
 import { IoMdArrowDropdown } from 'react-icons/io'
-import {Dashboard, Top, Greeting, Paragraph, Date, Box, Charts} from '../../Styles/main'
+import { Dashboard, Top, Greeting, Paragraph, Date, Box, Charts } from '../../Styles/main'
 import ChartCircle from '../../components/Chart/ChartCircle'
 import ChartGraph from '../../components/Chart/ChartGraph'
 import Overview from '../../components/Overview/Overview'
@@ -25,10 +25,11 @@ function Main() {
 
         <Overview />
         <Organisation />
-        {/* <Charts>
-          <ChartGraph />
+        <Charts>
+     <ChartGraph/>
           <ChartCircle />
-        </Charts> */}
+        </Charts>
+
       </Dashboard>
     </>
   )

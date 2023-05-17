@@ -83,4 +83,9 @@ export const Box = styled.div`
 export const Charts = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (max-width: 765px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;

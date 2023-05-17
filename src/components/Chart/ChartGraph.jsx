@@ -1,16 +1,15 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
-import styled from 'styled-components';
-import { ShadowBox , Title} from '../../Styles/GlobalStyles';
+import { Title2, Container } from '../../Styles/chartGraph'
 
 const ChartGraph = () => {
   const series = [
     {
-      name: 'Revenue',
+      name: 'FreeLancer',
       data: [5, 20, 23, 98, 87, 105, 91, 114, 94],
     },
     {
-      name: 'Free Cash Flow',
+      name: 'Contractors',
       data: [0, 8, 10, 26, 45, 48, 52, 53, 41],
     },
   ];
@@ -18,15 +17,16 @@ const ChartGraph = () => {
   const options = {
     chart: {
       type: 'bar',
-      height: 350,
+      height: 150,
     },
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: '100%',
+        columnWidth: '50%',
         endingShape: 'rounded',
       },
     },
+  
     dataLabels: {
       enabled: false,
     },
@@ -39,31 +39,22 @@ const ChartGraph = () => {
       categories: ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct','Nov','Dec'],
     },
 
+
     fill: {
       opacity: 1,
+      colors: ['#FE9900', '#00C8F0']
     },
 
   };
 
   return (
-    <Container id="chart">
+    <Container>
       <Title2>Monthly Invoices Distribution </Title2>
 
       <p>Track your Invoice flow for any given period</p>
-      <ReactApexChart options={options} series={series} type="bar" height={350} />
+      <ReactApexChart options={options} series={series} type="bar" height={350}/>
     </Container>
   );
 };
-const Container = styled(ShadowBox)`
-width: 65%;
-  margin-right: 20px;
-  p{
-margin-bottom: 20px;
-  }
-`
-const Title2 = styled(Title)`
-  text-align: start;
-  margin: 10px 0 10px 0;
-  `
 
 export default ChartGraph;
