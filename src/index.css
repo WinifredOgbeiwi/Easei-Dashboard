@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: #011747;
+    --hover:#002776;
+    --primaryYellow:#FE9900;
+    --background:#F6F6F6;
+    --dateColor:#DBE7FF;
+    --tableHeader:#F2F6FF;
+   --blue:#00C8F0;
+}
